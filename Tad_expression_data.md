@@ -268,7 +268,7 @@ I then used perl one liners to extract the seqs from Xue's transcriptome (on eva
 ```perl
 perl -ne 'if(/^>(\S+)/){$c=$i{$1}}$c?print:chomp;$i{$_}=1 if @ARGV' females_high_males_almost_zero borealis_tad_goand_transcriptome.fasta > XB_probe_seqs.fa
 ```
-because 3 were missing, I did this too:
+But that one is unreliable. This one is better:
 ```perl
 perl -ne 'if(/^>(\S+)/){$c=grep{/^$1$/}qw(TRINITY_DN8455_c0_g1_i2 TRINITY_DN6425_c0_g1_i4 TRINITY_DN46_c0_g1_i3)}print if $c' borealis_tad_goand_transcriptome.fasta  >> XB_probe_seqs.fa
 ```
