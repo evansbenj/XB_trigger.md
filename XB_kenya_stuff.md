@@ -9,3 +9,14 @@ and these are the file names:
 `mpileup_raw_wildBorealis_AustinGenome.vcf.gz` and `mpileup_raw_wildBorealis_allChrs.vcf.gz`
 
 BenF says they should be a basic bam alignment and samtools genotypic scheme, probably throwing out anything with a map quality < 20, but no other filters. 
+
+
+# Iqtree
+
+On evanslab: `/2/scratch/evanslab/2019_RADseq_KenyaXBXL_GhanaEastfamily/mtDNA/`
+```
+iqtree -s Kenya_borealis_only16s.nex -m TEST -nt 1 -pre Kenya_borealis_only16s.nex_
+```
+```
+iqtree -s Kenya_borealis_only16s.nex -m TPM2u+I -bb 1000
+```
