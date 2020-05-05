@@ -20,3 +20,27 @@ mom:
 ```
 bwa mem borealis_transcriptome_trinityOut.fasta '<zcat /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE3897_mom_liver_R1_paired.fastq.gz' '<zcat /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE3897_mom_liver_R2_paired.fastq.gz' > BJE3896_mom_liver.sam
 ```
+son1:
+```
+bwa mem borealis_transcriptome_trinityOut.fasta '<zcat /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE3929_boy_liver_R1_paired.fastq.gz /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE3929_boy_testis_R1_paired.fastq.gz' '<zcat /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE3929_boy_liver_R2_paired.fastq.gz /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE3929_boy_testis_R2_paired.fastq.gz' > BJE3929_boy_testis_liver.sam
+```
+son2:
+```
+bwa mem borealis_transcriptome_trinityOut.fasta '<zcat /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE4017_boy_liver_R1_paired.fastq.gz /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE4017_boy_testis_R1_paired.fastq.gz' '<zcat /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE4017_boy_liver_R2_paired.fastq.gz /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE4017_boy_testis_R2_paired.fastq.gz' > BJE4017_boy_testis_liver.sam
+```
+son3
+```
+bwa mem borealis_transcriptome_trinityOut.fasta '<zcat /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE4039_boy_liver_R1_paired.fastq.gz /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE4039_boy_testis_R1_paired.fastq.gz' '<zcat /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE4039_boy_liver_R2_paired.fastq.gz /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE4039_boy_testis_R2_paired.fastq.gz' > BJE4039_boy_testis_liver.sam
+```
+daughter1
+```
+bwa mem borealis_transcriptome_trinityOut.fasta '<zcat /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE4009_girl_liver_R1_paired.fastq.gz /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE4009_girl_oviduct_R1_paired.fastq.gz' '<zcat /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE4009_girl_liver_R2_paired.fastq.gz /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE4009_girl_oviduct_R2_paired.fastq.gz' > BJE4009_girl_oviduct_liver.sam
+```
+daughter2
+```
+bwa mem borealis_transcriptome_trinityOut.fasta '<zcat /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE4072_girl_liver_R1_paired.fastq.gz /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE4072_girl_oviduct_R1_paired.fastq.gz' '<zcat /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE4072_girl_liver_R2_paired.fastq.gz /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE4072_girl_oviduct_R2_paired.fastq.gz' > BJE4072_girl_oviduct_liver.sam
+```
+daughter3
+```
+bwa mem borealis_transcriptome_trinityOut.fasta '<zcat /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE4082_girl_liver_R1_paired.fastq.gz /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE4082_girl_oviduct_R1_paired.fastq.gz' '<zcat /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE4082_girl_liver_R2_paired.fastq.gz /home/evanslab/borealis_adultFamily_RNAseq/data/trimmed/BJE4082_girl_oviduct_R2_paired.fastq.gz' > BJE4082_girl_oviduct_liver.sam
+```
