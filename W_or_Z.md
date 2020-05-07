@@ -108,3 +108,8 @@ merge vcf files
 ```
 bcftools merge BJE3896_mom_liver_sorted.bam.vcf.gz BJE3896_dad_testis_liver_sorted.bam.vcf.gz BJE4082_girl_oviduct_liver_sorted.bam.vcf.gz BJE4072_girl_oviduct_liver_sorted.bam.vcf.gz BJE4009_girl_oviduct_liver_sorted.bam.vcf.gz BJE4039_boy_testis_liver_sorted.bam.vcf.gz BJE4017_boy_testis_liver_sorted.bam.vcf.gz BJE3929_boy_testis_liver_sorted.bam.vcf.gz -Oz -o Merged.vcf.gz
 ```
+extract allele depth information
+```
+vcftools --gzvcf Merged.vcf.gz --extract-FORMAT-info AD
+```
+After renaming, the output file is called `Merged.vcf.gz_out.AD.FORMAT` and it has exactly what I need - allele depth for all individuals that have genotypes for each transcript for each SNP.
