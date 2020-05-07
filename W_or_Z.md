@@ -75,3 +75,36 @@ samtools sort BJE4017_boy_testis_liver.bam -o BJE4017_boy_testis_liver_sorted.ba
 samtools sort BJE4082_girl_oviduct_liver.bam -o BJE4082_girl_oviduct_liver_sorted.bam
 samtools sort BJE4039_boy_testis_liver.bam -o BJE4039_boy_testis_liver_sorted.bam
 ```
+make bai index for bam files
+```
+samtools index BJE3896_mom_liver_sorted.bam
+```
+call genotypees
+```
+Use samtools and bcftools to call genotypes and filter
+samtools mpileup -d8000 -ugf borealis_transcriptome_trinityOut.fasta -t DP,AD BJE3896_mom_liver_sorted.bam | bcftools call -V indels --format-fields GQ -m -O z | bcftools filter -e 'FORMAT/GT = "." || FORMAT/DP < 10 || FORMAT/GQ < 20 || FORMAT/GQ = "."' -O z -o BJE3896_mom_liver_sorted.bam.vcf.gz
+
+samtools mpileup -d8000 -ugf borealis_transcriptome_trinityOut.fasta -t DP,AD BJE4009_girl_oviduct_liver_sorted.bam | bcftools call -V indels --format-fields GQ -m -O z | bcftools filter -e 'FORMAT/GT = "." || FORMAT/DP < 10 || FORMAT/GQ < 20 || FORMAT/GQ = "."' -O z -o BJE4009_girl_oviduct_liver_sorted.bam.vcf.gz
+
+samtools mpileup -d8000 -ugf borealis_transcriptome_trinityOut.fasta -t DP,AD BJE3929_boy_testis_liver_sorted.bam | bcftools call -V indels --format-fields GQ -m -O z | bcftools filter -e 'FORMAT/GT = "." || FORMAT/DP < 10 || FORMAT/GQ < 20 || FORMAT/GQ = "."' -O z -o BJE3929_boy_testis_liver_sorted.bam.vcf.gz
+
+samtools mpileup -d8000 -ugf borealis_transcriptome_trinityOut.fasta -t DP,AD BJE4072_girl_oviduct_liver_sorted.bam | bcftools call -V indels --format-fields GQ -m -O z | bcftools filter -e 'FORMAT/GT = "." || FORMAT/DP < 10 || FORMAT/GQ < 20 || FORMAT/GQ = "."' -O z -o BJE4072_girl_oviduct_liver_sorted.bam.vcf.gz
+
+samtools mpileup -d8000 -ugf borealis_transcriptome_trinityOut.fasta -t DP,AD BJE4017_boy_testis_liver_sorted.bam | bcftools call -V indels --format-fields GQ -m -O z | bcftools filter -e 'FORMAT/GT = "." || FORMAT/DP < 10 || FORMAT/GQ < 20 || FORMAT/GQ = "."' -O z -o BJE4017_boy_testis_liver_sorted.bam.vcf.gz
+
+samtools mpileup -d8000 -ugf borealis_transcriptome_trinityOut.fasta -t DP,AD BJE4082_girl_oviduct_liver_sorted.bam | bcftools call -V indels --format-fields GQ -m -O z | bcftools filter -e 'FORMAT/GT = "." || FORMAT/DP < 10 || FORMAT/GQ < 20 || FORMAT/GQ = "."' -O z -o BJE4082_girl_oviduct_liver_sorted.bam.vcf.gz
+
+samtools mpileup -d8000 -ugf borealis_transcriptome_trinityOut.fasta -t DP,AD BJE4039_boy_testis_liver_sorted.bam | bcftools call -V indels --format-fields GQ -m -O z | bcftools filter -e 'FORMAT/GT = "." || FORMAT/DP < 10 || FORMAT/GQ < 20 || FORMAT/GQ = "."' -O z -o BJE4039_boy_testis_liver_sorted.bam.vcf.gz
+
+samtools mpileup -d8000 -ugf borealis_transcriptome_trinityOut.fasta -t DP,AD BJE3896_dad_testis_liver_sorted.bam | bcftools call -V indels --format-fields GQ -m -O z | bcftools filter -e 'FORMAT/GT = "." || FORMAT/DP < 10 || FORMAT/GQ < 20 || FORMAT/GQ = "."' -O z -o BJE3896_dad_testis_liver_sorted.bam.vcf.gz
+```
+
+
+make index for vcf files
+```
+tabix -p vcf BJE4009_girl_oviduct_liver_sorted.bam.vcf.gz
+```
+merge vcf files
+```
+bcftools merge BJE3896_mom_liver_sorted.bam.vcf.gz BJE3896_dad_testis_liver_sorted.bam.vcf.gz BJE4082_girl_oviduct_liver_sorted.bam.vcf.gz BJE4072_girl_oviduct_liver_sorted.bam.vcf.gz BJE4009_girl_oviduct_liver_sorted.bam.vcf.gz BJE4039_boy_testis_liver_sorted.bam.vcf.gz BJE4017_boy_testis_liver_sorted.bam.vcf.gz BJE3929_boy_testis_liver_sorted.bam.vcf.gz -Oz -o Merged.vcf.gz
+```
