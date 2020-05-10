@@ -11,6 +11,15 @@ and the transcriptome assembly is here:
 ```
 /home/evanslab/borealis_adultFamily_RNAseq/data/transcriptome/combine_de_count_transcript/borealis_transcriptome_trinityOut.fasta
 ```
+Trimmed data from tads are here:
+```
+/home/evanslab/borealis_tadpole_transcriptome/data/trimmed/2_trimmed_data
+```
+and the transcriptome assembly is here:
+```
+
+```
+
 
 map reads (dad):
 ```
