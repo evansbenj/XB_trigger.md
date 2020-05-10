@@ -17,7 +17,7 @@ Trimmed data from tads are here:
 ```
 and the transcriptome assembly is here:
 ```
-
+/home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta
 ```
 
 
