@@ -3,7 +3,7 @@
 zcat XENTR_10.0_genome.fasta.gz | perl -ne 'if(/^>(\S+)/){$c=grep{/^$1$/}qw(Chr8)}print if $c' > XT_v10_chr8.fasta
 ```
 
-# Geopard (program to make dotplots)
+# Gepard (program to make dotplots)
 
 I'm working in this directory: `/4/ben/dotplot`
 
