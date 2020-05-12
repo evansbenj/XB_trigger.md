@@ -3,6 +3,11 @@
 zcat XENTR_10.0_genome.fasta.gz | perl -ne 'if(/^>(\S+)/){$c=grep{/^$1$/}qw(Chr8)}print if $c' > XT_v10_chr8.fasta
 ```
 
+I think they are softmasked, so I hard masked them like this (using infile editing, so I made a copy first):
+```
+sed -i.bak -e 's/a/N/g' -e 's/c/N/g' -e 's/t/N/g' -e 's/g/N/g' XL_v9_1_chr8L_hardmasked.fasta
+```
+
 # Gepard (program to make dotplots)
 
 I'm working in this directory: `/4/ben/dotplot`
