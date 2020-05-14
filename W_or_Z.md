@@ -144,3 +144,7 @@ write.csv(borTad_laevisGenome_edgeR_tpm_SL_malebiased$trans_id,
 ```
 And used this list to grep the allele depth data of the individual transcripts from the files generated above with vcftools
 
+```
+grep -f SL_trans_IDs_sig_Sex_biased Merged.vcf.gz_out.AD.FORMAT > SL_allelic_depth_sig_sex_biased.AD.FORMAT
+```
+
