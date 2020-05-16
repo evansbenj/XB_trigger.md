@@ -20,3 +20,11 @@ iqtree -s Kenya_borealis_only16s.nex -m TEST -nt 1 -pre Kenya_borealis_only16s.n
 ```
 iqtree -s Kenya_borealis_only16s.nex -m TPM2u+I -bb 1000
 ```
+with mom and dad de novo:
+```
+iqtree -s Kenya_borealis_only16s_withMomDad.nex -m TEST -nt 1 -pre Kenya_borealis_only16s_withMomDad.nex_
+```
+```
+iqtree -s Kenya_borealis_only16s_withMomDad.nex -m HKY+I -bb 1000
+```
+
