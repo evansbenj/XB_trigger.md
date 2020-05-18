@@ -1,4 +1,6 @@
 # Extract chromosome fasta files
+
+In this directory on info: `/4/ben`
 ```
 zcat XENTR_10.0_genome.fasta.gz | perl -ne 'if(/^>(\S+)/){$c=grep{/^$1$/}qw(Chr8)}print if $c' > XT_v10_chr8.fasta
 ```
