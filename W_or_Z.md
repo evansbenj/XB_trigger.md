@@ -148,3 +148,25 @@ And used this list to grep the allele depth data of the individual transcripts f
 grep -f SL_trans_IDs_sig_Sex_biased Merged.vcf.gz_out.AD.FORMAT > SL_allelic_depth_sig_sex_biased.AD.FORMAT
 ```
 
+# Angsd
+
+I decided to use angsd to look at polymorphism of individual male and female XB from different places.
+
+The bam files mapped to XL_v9.2 are here:
+```
+/2/scratch/evanslab/2019_RADseq_KenyaXBXL_GhanaEastfamily/plate1/alinged
+```
+I indexed the bam file using `samtools faidx file.bam` and I indexed the reference genome using `bwa index XL9_2.fa.gz`.
+As directed by the manual I added `-fold 1` because we don't have ancestral states.
+
+Here are the commands I will try:
+```
+/home/evanslab/bin/angsd/angsd -bam sort_Fem_Chesuwe_BJE4479_Xb.fq.gz.bam -doSaf 1 -anc XL9_2.fa.gz -fold 1 -r chr8L: -GL 1 -P 24 -out out 
+/home/evanslab/bin/angsd/misc/realSFS out.saf.idx -fold 1 -r chr8L: -P 24 > out.sfs
+#use -fold 1 in the above command if you dont have ancestral state.
+/home/evanslab/bin/angsd/misc/realSFS saf2theta out.saf.idx -fold 1 -r chr8L: -outname out -sfs out.sfs
+#Estimate for every Chromosome/scaffold
+/home/evanslab/bin/angsd/misc/thetaStat -r chr8L: do_stat out.thetas.idx
+#Do a sliding window analysis based on the output from the make_bed command.
+/home/evanslab/bin/angsd/misc/thetaStat do_stat out.thetas.idx -win 50000 -step 10000 -r chr8L: -outnames theta.thetasWindow.gz
+```
