@@ -149,7 +149,7 @@ As directed by the manual I added `-fold 1` because we don't have ancestral stat
 
 Here are the commands I will try:
 ```
-/home/evanslab/bin/angsd/angsd -bam sort_Fem_Chesuwe_BJE4479_Xb.fq.gz.bam -doSaf 1 -anc XL9_2.fa.gz -fold 1 -r chr8L: -GL 1 -P 24 -out out 
+/home/evanslab/bin/angsd/angsd -i sort_Fem_Chesuwe_BJE4479_Xb.fq.gz.bam -doSaf 1 -anc XL9_2.fa.gz -fold 1 -r chr8L: -GL 1 -P 24 -out out 
 /home/evanslab/bin/angsd/misc/realSFS out.saf.idx -fold 1 -r chr8L: -P 24 > out.sfs
 #use -fold 1 in the above command if you dont have ancestral state.
 /home/evanslab/bin/angsd/misc/realSFS saf2theta out.saf.idx -fold 1 -r chr8L: -outname out -sfs out.sfs
@@ -157,6 +157,16 @@ Here are the commands I will try:
 /home/evanslab/bin/angsd/misc/thetaStat -r chr8L: do_stat out.thetas.idx
 #Do a sliding window analysis based on the output from the make_bed command.
 /home/evanslab/bin/angsd/misc/thetaStat do_stat out.thetas.idx -win 50000 -step 10000 -r chr8L: -outnames theta.thetasWindow.gz
+```
+
+For tads:
+```
+/home/evanslab/bin/angsd/angsd -i /home/evanslab/borealis_tadpole_transcriptome/data/trimmed/2_trimmed_data/XBO12_sorted.bam -doSaf 1 -anc /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -fold 1 -GL 1 -P 24 -out out 
+/home/evanslab/bin/angsd/misc/realSFS out.saf.idx -fold 1 -P 24 > out.sfs
+#use -fold 1 in the above command if you dont have ancestral state.
+/home/evanslab/bin/angsd/misc/realSFS saf2theta out.saf.idx -fold 1 -outname out -sfs out.sfs
+#Estimate for every Chromosome/scaffold
+/home/evanslab/bin/angsd/misc/thetaStat do_stat out.thetas.idx
 ```
 
 # My polymorphism script
