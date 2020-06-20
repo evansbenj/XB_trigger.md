@@ -46,13 +46,13 @@ bwa mem /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/
 make bam files
 ```
 samtools view -bt borealis_transcriptome_trinityOut.fasta -o BJE3896_mom_liver.bam BJE3896_mom_liver.sam
-samtools view -bt borealis_transcriptome_trinityOut.fasta -o BJE3896_dad_testis_liver.bam BJE3896_dad_testis_liver.sam
-samtools view -bt borealis_transcriptome_trinityOut.fasta -o BJE4009_girl_oviduct_liver.bam BJE4009_girl_oviduct_liver.sam
-samtools view -bt borealis_transcriptome_trinityOut.fasta -o BJE3929_boy_testis_liver.bam BJE3929_boy_testis_liver.sam
-samtools view -bt borealis_transcriptome_trinityOut.fasta -o BJE4072_girl_oviduct_liver.bam BJE4072_girl_oviduct_liver.sam
-samtools view -bt borealis_transcriptome_trinityOut.fasta -o BJE4017_boy_testis_liver.bam BJE4017_boy_testis_liver.sam
-samtools view -bt borealis_transcriptome_trinityOut.fasta -o BJE4082_girl_oviduct_liver.bam BJE4082_girl_oviduct_liver.sam
-samtools view -bt borealis_transcriptome_trinityOut.fasta -o BJE4039_boy_testis_liver.bam BJE4039_boy_testis_liver.sam
+samtools view -bt borealis_transcriptome_trinityOut.fasta -o BJE3896_dad_liver.bam BJE3896_dad_liver.sam
+samtools view -bt borealis_transcriptome_trinityOut.fasta -o BJE4009_girl_liver.bam BJE4009_girl_liver.sam
+samtools view -bt borealis_transcriptome_trinityOut.fasta -o BJE3929_boy_liver.bam BJE3929_boy_liver.sam
+samtools view -bt borealis_transcriptome_trinityOut.fasta -o BJE4072_girl_liver.bam BJE4072_girl_liver.sam
+samtools view -bt borealis_transcriptome_trinityOut.fasta -o BJE4017_boy_liver.bam BJE4017_boy_liver.sam
+samtools view -bt borealis_transcriptome_trinityOut.fasta -o BJE4082_girl_liver.bam BJE4082_girl_liver.sam
+samtools view -bt borealis_transcriptome_trinityOut.fasta -o BJE4039_boy_liver.bam BJE4039_boy_liver.sam
 ```
 
 
