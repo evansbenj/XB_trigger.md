@@ -214,8 +214,12 @@ Tracing SNPs in the liver RNAseq, which includes a mother, father, and offsping,
 ```
 zcat Merged_st46.vcf.gz | vcf-to-tab > out.tab
 ```
+in this directory: `/home/evanslab/borealis_adultFamily_RNAseq/trimmed`:
+
 ```
-./Boot_from_tab_diverge_poly_2018_allowmissingdata_transcripts.pl out.tab 11111111 3_4_1_2_3 out.poly out.poly_by_windows
+./Boot_from_tab_diverge_poly_2018_allowmissingdata_transcripts.pl XB_liver_RNAseq_Merged.vcf.gz.tab 11111111 3_4_2_4_7_8 XB_liver_RNAseq_Merged_females.poly XB_liver_RNAseq_Merged_females.poly_by_windows
+
+./Boot_from_tab_diverge_poly_2018_allowmissingdata_transcripts.pl XB_liver_RNAseq_Merged.vcf.gz.tab 11111111 3_4_1_3_5_6 XB_liver_RNAseq_Merged_males.poly XB_liver_RNAseq_Merged_males.poly_by_windows
 ```
 
 # Angsd
