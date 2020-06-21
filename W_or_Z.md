@@ -91,9 +91,6 @@ samtools mpileup -d8000 -ugf /home/evanslab/borealis_adultFamily_RNAseq/borealis
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/build_transcriptome/borealis_adult_liver_transcriptome_trinityout.fasta -t DP,AD BJE4072_girl_liver_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o BJE4072_girl_liver_sorted.vcf.gz
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/build_transcriptome/borealis_adult_liver_transcriptome_trinityout.fasta -t DP,AD BJE4082_girl_liver_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o BJE4082_girl_liver_sorted.vcf.gz
 
-
-
-
 ```
 
 
@@ -134,6 +131,22 @@ And used this list to grep the allele depth data of the individual transcripts f
 
 ```
 grep -f SL_trans_IDs_sig_Sex_biased Merged.vcf.gz_out.AD.FORMAT > SL_allelic_depth_sig_sex_biased.AD.FORMAT
+```
+
+# SNPs in RNAseq data
+OK using the approach above I mapped RNAseq data to the de novo transcriptome and called homoz and heteroz sites.  For XB I hypothesize that the female biased expression is because the Z chromosome evolved from a degenrate Y chromosome. If this is true, I predict that there should be very low variation on female biased transcripts (or really any transcript) on the SL region compared to the non-SL region.  
+
+So I need to calculate pi for all transcripts and then test whether it is lower for female biased SL than for female biased nonSL. The reason this is expected is because a degenrate Z from a Y chr would mean that SL genes are mostly from the W.
+
+This can be done for liver, and both XB tads.
+
+Tracing SNPs in the liver RNAseq, which includes a mother, father, and offsping, doesn't help much: a SNP in the mother could be on the W- or Z-.  If it is in the mother and on the W and co-expressed with a Z-linked allele, we expect the W allele to be more highly expressed in the mother and daughers. When I looked at allele depth, most maternal variants (relative to the reference) seemed to be not expressed in males, making it difficult to tell whether this was female-biased regulation or degeneration.
+
+```
+zcat Merged_st46.vcf.gz | vcf-to-tab > out.tab
+```
+```
+./Boot_from_tab_diverge_poly_2018_allowmissingdata_transcripts.pl out.tab 11111111 3_4_1_2_3 out.poly out.poly_by_windows
 ```
 
 # Angsd
