@@ -25,7 +25,6 @@ map reads (dad) in this directory `/home/evanslab/borealis_adultFamily_RNAseq/tr
 ```
 bwa mem /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/build_transcriptome/borealis_adult_liver_transcriptome_trinityout.fasta '<zcat /home/evanslab/borealis_adultFamily_RNAseq/trimmed/BJE3896_dad_liver_R1_paired.fastq.gz' '<zcat /home/evanslab/borealis_adultFamily_RNAseq/trimmed/BJE3896_dad_liver_R2_paired.fastq.gz'> BJE3896_dad_liver.sam
 
-
 bwa mem /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/build_transcriptome/borealis_adult_liver_transcriptome_trinityout.fasta '<zcat /home/evanslab/borealis_adultFamily_RNAseq/trimmed/BJE3897_mom_liver_R1_paired.fastq.gz' '<zcat /home/evanslab/borealis_adultFamily_RNAseq/trimmed/BJE3897_mom_liver_R2_paired.fastq.gz' > BJE3897_mom_liver.sam
 
 bwa mem /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/build_transcriptome/borealis_adult_liver_transcriptome_trinityout.fasta '<zcat /home/evanslab/borealis_adultFamily_RNAseq/trimmed/BJE3929_boy_liver_R1_paired.fastq.gz' '<zcat /home/evanslab/borealis_adultFamily_RNAseq/trimmed/BJE3929_boy_liver_R2_paired.fastq.gz' > BJE3929_boy_liver.sam
@@ -76,7 +75,7 @@ make bai index for bam files
 ```
 samtools index BJE3896_mom_liver_sorted.bam
 ```
-call genotypees
+call genotypees do light filter and outout all calls, including homoz ref
 ```
 Use samtools and bcftools to call genotypes and filter
 
