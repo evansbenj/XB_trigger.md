@@ -79,21 +79,22 @@ samtools index BJE3896_mom_liver_sorted.bam
 call genotypees
 ```
 Use samtools and bcftools to call genotypes and filter
-samtools mpileup -d8000 -ugf borealis_transcriptome_trinityOut.fasta -t DP,AD BJE3897_mom_liver_sorted.bam | bcftools call -V indels --format-fields GQ -m -O z | bcftools filter -e 'FORMAT/GT = "." || FORMAT/DP < 10 || FORMAT/GQ < 20 || FORMAT/GQ = "."' -O z -o BJE38976_mom_liver_sorted.bam.vcf.gz
 
-samtools mpileup -d8000 -ugf borealis_transcriptome_trinityOut.fasta -t DP,AD BJE4009_girl_oviduct_liver_sorted.bam | bcftools call -V indels --format-fields GQ -m -O z | bcftools filter -e 'FORMAT/GT = "." || FORMAT/DP < 10 || FORMAT/GQ < 20 || FORMAT/GQ = "."' -O z -o BJE4009_girl_oviduct_liver_sorted.bam.vcf.gz
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/build_transcriptome/borealis_adult_liver_transcriptome_trinityout.fasta -t DP,AD BJE3897_mom_liver_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o BJE3897_mom_liver_sorted.vcf.gz
 
-samtools mpileup -d8000 -ugf borealis_transcriptome_trinityOut.fasta -t DP,AD BJE3929_boy_testis_liver_sorted.bam | bcftools call -V indels --format-fields GQ -m -O z | bcftools filter -e 'FORMAT/GT = "." || FORMAT/DP < 10 || FORMAT/GQ < 20 || FORMAT/GQ = "."' -O z -o BJE3929_boy_testis_liver_sorted.bam.vcf.gz
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/build_transcriptome/borealis_adult_liver_transcriptome_trinityout.fasta -t DP,AD BJE3896_dad_liver_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o BJE3896_dad_liver_sorted.vcf.gz
 
-samtools mpileup -d8000 -ugf borealis_transcriptome_trinityOut.fasta -t DP,AD BJE4072_girl_oviduct_liver_sorted.bam | bcftools call -V indels --format-fields GQ -m -O z | bcftools filter -e 'FORMAT/GT = "." || FORMAT/DP < 10 || FORMAT/GQ < 20 || FORMAT/GQ = "."' -O z -o BJE4072_girl_oviduct_liver_sorted.bam.vcf.gz
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/build_transcriptome/borealis_adult_liver_transcriptome_trinityout.fasta -t DP,AD BJE3929_boy_liver_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o BJE3929_boy_liver_sorted.vcf.gz
 
-samtools mpileup -d8000 -ugf borealis_transcriptome_trinityOut.fasta -t DP,AD BJE4017_boy_testis_liver_sorted.bam | bcftools call -V indels --format-fields GQ -m -O z | bcftools filter -e 'FORMAT/GT = "." || FORMAT/DP < 10 || FORMAT/GQ < 20 || FORMAT/GQ = "."' -O z -o BJE4017_boy_testis_liver_sorted.bam.vcf.gz
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/build_transcriptome/borealis_adult_liver_transcriptome_trinityout.fasta -t DP,AD BJE4009_girl_liver_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o BJE4009_girl_liver_sorted.vcf.gz
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/build_transcriptome/borealis_adult_liver_transcriptome_trinityout.fasta -t DP,AD BJE4017_boy_liver_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o BJE4017_boy_liver_sorted.vcf.gz
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/build_transcriptome/borealis_adult_liver_transcriptome_trinityout.fasta -t DP,AD BJE4039_boy_liver_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o BJE4039_boy_liver_sorted.vcf.gz
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/build_transcriptome/borealis_adult_liver_transcriptome_trinityout.fasta -t DP,AD BJE4072_girl_liver_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o BJE4072_girl_liver_sorted.vcf.gz
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/build_transcriptome/borealis_adult_liver_transcriptome_trinityout.fasta -t DP,AD BJE4082_girl_liver_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o BJE4082_girl_liver_sorted.vcf.gz
 
-samtools mpileup -d8000 -ugf borealis_transcriptome_trinityOut.fasta -t DP,AD BJE4082_girl_oviduct_liver_sorted.bam | bcftools call -V indels --format-fields GQ -m -O z | bcftools filter -e 'FORMAT/GT = "." || FORMAT/DP < 10 || FORMAT/GQ < 20 || FORMAT/GQ = "."' -O z -o BJE4082_girl_oviduct_liver_sorted.bam.vcf.gz
 
-samtools mpileup -d8000 -ugf borealis_transcriptome_trinityOut.fasta -t DP,AD BJE4039_boy_testis_liver_sorted.bam | bcftools call -V indels --format-fields GQ -m -O z | bcftools filter -e 'FORMAT/GT = "." || FORMAT/DP < 10 || FORMAT/GQ < 20 || FORMAT/GQ = "."' -O z -o BJE4039_boy_testis_liver_sorted.bam.vcf.gz
 
-samtools mpileup -d8000 -ugf borealis_transcriptome_trinityOut.fasta -t DP,AD BJE3896_dad_testis_liver_sorted.bam | bcftools call -V indels --format-fields GQ -m -O z | bcftools filter -e 'FORMAT/GT = "." || FORMAT/DP < 10 || FORMAT/GQ < 20 || FORMAT/GQ = "."' -O z -o BJE3896_dad_testis_liver_sorted.bam.vcf.gz
+
 ```
 
 
