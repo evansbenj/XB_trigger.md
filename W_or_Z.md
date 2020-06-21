@@ -26,7 +26,7 @@ map reads (dad) in this directory `/home/evanslab/borealis_adultFamily_RNAseq/tr
 bwa mem /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/build_transcriptome/borealis_adult_liver_transcriptome_trinityout.fasta '<zcat /home/evanslab/borealis_adultFamily_RNAseq/trimmed/BJE3896_dad_liver_R1_paired.fastq.gz' '<zcat /home/evanslab/borealis_adultFamily_RNAseq/trimmed/BJE3896_dad_liver_R2_paired.fastq.gz'> BJE3896_dad_liver.sam
 
 
-bwa mem /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/build_transcriptome/borealis_adult_liver_transcriptome_trinityout.fasta '<zcat /home/evanslab/borealis_adultFamily_RNAseq/trimmed/BJE3897_mom_liver_R1_paired.fastq.gz' '<zcat /home/evanslab/borealis_adultFamily_RNAseq/trimmed/BJE3897_mom_liver_R2_paired.fastq.gz' > BJE3896_mom_liver.sam
+bwa mem /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/build_transcriptome/borealis_adult_liver_transcriptome_trinityout.fasta '<zcat /home/evanslab/borealis_adultFamily_RNAseq/trimmed/BJE3897_mom_liver_R1_paired.fastq.gz' '<zcat /home/evanslab/borealis_adultFamily_RNAseq/trimmed/BJE3897_mom_liver_R2_paired.fastq.gz' > BJE3897_mom_liver.sam
 
 bwa mem /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/build_transcriptome/borealis_adult_liver_transcriptome_trinityout.fasta '<zcat /home/evanslab/borealis_adultFamily_RNAseq/trimmed/BJE3929_boy_liver_R1_paired.fastq.gz' '<zcat /home/evanslab/borealis_adultFamily_RNAseq/trimmed/BJE3929_boy_liver_R2_paired.fastq.gz' > BJE3929_boy_liver.sam
 
@@ -45,7 +45,7 @@ bwa mem /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/
 
 make bam files
 ```
-samtools view -bt borealis_transcriptome_trinityOut.fasta -o BJE3896_mom_liver.bam BJE3896_mom_liver.sam
+samtools view -bt borealis_transcriptome_trinityOut.fasta -o BJE3896_mom_liver.bam BJE3897_mom_liver.sam
 samtools view -bt borealis_transcriptome_trinityOut.fasta -o BJE3896_dad_liver.bam BJE3896_dad_liver.sam
 samtools view -bt borealis_transcriptome_trinityOut.fasta -o BJE4009_girl_liver.bam BJE4009_girl_liver.sam
 samtools view -bt borealis_transcriptome_trinityOut.fasta -o BJE3929_boy_liver.bam BJE3929_boy_liver.sam
@@ -63,7 +63,7 @@ rm -f BJE3896_mom_liver.sam
 
 sort bam files
 ```
-samtools sort BJE3896_mom_liver.bam -o BJE3896_mom_liver_sorted.bam
+samtools sort BJE3896_mom_liver.bam -o BJE3897_mom_liver_sorted.bam
 samtools sort BJE4009_girl_liver.bam -o BJE4009_girl_liver_sorted.bam
 samtools sort BJE3929_boy_liver.bam -o BJE3929_boy_liver_sorted.bam
 samtools sort BJE3896_dad_liver.bam -o BJE3896_dad_liver_sorted.bam
@@ -79,7 +79,7 @@ samtools index BJE3896_mom_liver_sorted.bam
 call genotypees
 ```
 Use samtools and bcftools to call genotypes and filter
-samtools mpileup -d8000 -ugf borealis_transcriptome_trinityOut.fasta -t DP,AD BJE3896_mom_liver_sorted.bam | bcftools call -V indels --format-fields GQ -m -O z | bcftools filter -e 'FORMAT/GT = "." || FORMAT/DP < 10 || FORMAT/GQ < 20 || FORMAT/GQ = "."' -O z -o BJE3896_mom_liver_sorted.bam.vcf.gz
+samtools mpileup -d8000 -ugf borealis_transcriptome_trinityOut.fasta -t DP,AD BJE3897_mom_liver_sorted.bam | bcftools call -V indels --format-fields GQ -m -O z | bcftools filter -e 'FORMAT/GT = "." || FORMAT/DP < 10 || FORMAT/GQ < 20 || FORMAT/GQ = "."' -O z -o BJE38976_mom_liver_sorted.bam.vcf.gz
 
 samtools mpileup -d8000 -ugf borealis_transcriptome_trinityOut.fasta -t DP,AD BJE4009_girl_oviduct_liver_sorted.bam | bcftools call -V indels --format-fields GQ -m -O z | bcftools filter -e 'FORMAT/GT = "." || FORMAT/DP < 10 || FORMAT/GQ < 20 || FORMAT/GQ = "."' -O z -o BJE4009_girl_oviduct_liver_sorted.bam.vcf.gz
 
@@ -103,7 +103,7 @@ tabix -p vcf BJE4009_girl_oviduct_liver_sorted.bam.vcf.gz
 ```
 merge vcf files
 ```
-bcftools merge BJE3896_mom_liver_sorted.bam.vcf.gz BJE3896_dad_testis_liver_sorted.bam.vcf.gz BJE4082_girl_oviduct_liver_sorted.bam.vcf.gz BJE4072_girl_oviduct_liver_sorted.bam.vcf.gz BJE4009_girl_oviduct_liver_sorted.bam.vcf.gz BJE4039_boy_testis_liver_sorted.bam.vcf.gz BJE4017_boy_testis_liver_sorted.bam.vcf.gz BJE3929_boy_testis_liver_sorted.bam.vcf.gz -Oz -o Merged.vcf.gz
+bcftools merge BJE3897_mom_liver_sorted.bam.vcf.gz BJE3896_dad_testis_liver_sorted.bam.vcf.gz BJE4082_girl_oviduct_liver_sorted.bam.vcf.gz BJE4072_girl_oviduct_liver_sorted.bam.vcf.gz BJE4009_girl_oviduct_liver_sorted.bam.vcf.gz BJE4039_boy_testis_liver_sorted.bam.vcf.gz BJE4017_boy_testis_liver_sorted.bam.vcf.gz BJE3929_boy_testis_liver_sorted.bam.vcf.gz -Oz -o Merged.vcf.gz
 ```
 extract allele depth information
 ```
