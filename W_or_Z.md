@@ -64,13 +64,13 @@ rm -f BJE3896_mom_liver.sam
 sort bam files
 ```
 samtools sort BJE3896_mom_liver.bam -o BJE3896_mom_liver_sorted.bam
-samtools sort BJE4009_girl_oviduct_liver.bam -o BJE4009_girl_oviduct_liver_sorted.bam
-samtools sort BJE3929_boy_testis_liver.bam -o BJE3929_boy_testis_liver_sorted.bam
-samtools sort BJE3896_dad_testis_liver.bam -o BJE3896_dad_testis_liver_sorted.bam
-samtools sort BJE4072_girl_oviduct_liver.bam -o BJE4072_girl_oviduct_liver_sorted.bam
-samtools sort BJE4017_boy_testis_liver.bam -o BJE4017_boy_testis_liver_sorted.bam
-samtools sort BJE4082_girl_oviduct_liver.bam -o BJE4082_girl_oviduct_liver_sorted.bam
-samtools sort BJE4039_boy_testis_liver.bam -o BJE4039_boy_testis_liver_sorted.bam
+samtools sort BJE4009_girl_liver.bam -o BJE4009_girl_liver_sorted.bam
+samtools sort BJE3929_boy_liver.bam -o BJE3929_boy_liver_sorted.bam
+samtools sort BJE3896_dad_liver.bam -o BJE3896_dad_liver_sorted.bam
+samtools sort BJE4072_girl_liver.bam -o BJE4072_girl_liver_sorted.bam
+samtools sort BJE4017_boy_liver.bam -o BJE4017_boy_liver_sorted.bam
+samtools sort BJE4082_girl_liver.bam -o BJE4082_girl_liver_sorted.bam
+samtools sort BJE4039_boy_liver.bam -o BJE4039_boy_liver_sorted.bam
 ```
 make bai index for bam files
 ```
