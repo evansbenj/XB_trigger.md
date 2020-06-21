@@ -92,6 +92,71 @@ samtools mpileup -d8000 -ugf /home/evanslab/borealis_adultFamily_RNAseq/borealis
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/build_transcriptome/borealis_adult_liver_transcriptome_trinityout.fasta -t DP,AD BJE4082_girl_liver_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o BJE4082_girl_liver_sorted.vcf.gz
 
 ```
+also for tad RNAseq:
+```
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO12_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO12_sorted.bam.vcf.gz
+
+
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO19_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO19_sorted.bam.vcf.gz
+
+
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO24_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO24_sorted.bam.vcf.gz
+
+
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO29_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO29_sorted.bam.vcf.gz
+
+
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO33_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO33_sorted.bam.vcf.gz
+
+
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO8_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO8_sorted.bam.vcf.gz
+
+
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO15_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO15_sorted.bam.vcf.gz
+
+
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO20_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO20_sorted.bam.vcf.gz
+
+
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO26_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO26_sorted.bam.vcf.gz
+
+
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO30_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO30_sorted.bam.vcf.gz
+
+
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO34_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO34_sorted.bam.vcf.gz
+
+
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO16_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO16_sorted.bam.vcf.gz
+
+
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO21_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO21_sorted.bam.vcf.gz
+
+
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO27_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO27_sorted.bam.vcf.gz
+
+
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO31_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO31_sorted.bam.vcf.gz
+
+
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO35_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO35_sorted.bam.vcf.gz
+
+
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO17_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO17_sorted.bam.vcf.gz
+
+
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO23_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO23_sorted.bam.vcf.gz
+
+
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO28_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO28_sorted.bam.vcf.gz
+
+
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO32_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO32_sorted.bam.vcf.gz
+
+
+samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO36_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO36_sorted.bam.vcf.gz
+
+```
 
 
 make index for vcf files
