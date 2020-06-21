@@ -167,6 +167,10 @@ merge vcf files
 ```
 bcftools merge BJE3897_mom_liver_sorted.bam.vcf.gz BJE3896_dad_testis_liver_sorted.bam.vcf.gz BJE4082_girl_oviduct_liver_sorted.bam.vcf.gz BJE4072_girl_oviduct_liver_sorted.bam.vcf.gz BJE4009_girl_oviduct_liver_sorted.bam.vcf.gz BJE4039_boy_testis_liver_sorted.bam.vcf.gz BJE4017_boy_testis_liver_sorted.bam.vcf.gz BJE3929_boy_testis_liver_sorted.bam.vcf.gz -Oz -o Merged.vcf.gz
 ```
+```
+bcftools merge BJE3897_mom_liver_sorted.vcf.gz BJE4009_girl_liver_sorted.vcf.gz BJE4072_girl_liver_sorted.vcf.gz BJE4082_girl_liver_sorted.vcf.gz BJE3896_dad_liver_sorted.vcf.gz BJE3929_boy_liver_sorted.vcf.gz BJE4017_boy_liver_sorted.vcf.gz BJE4039_boy_liver_sorted.vcf.gz -Oz -o XB_liver_RNAseq_Merged.vcf.gz
+```
+
 extract allele depth information
 ```
 vcftools --gzvcf Merged.vcf.gz --extract-FORMAT-info AD
