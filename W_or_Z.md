@@ -229,6 +229,24 @@ both
 ./Boot_from_tab_diverge_poly_2018_allowmissingdata_transcripts.pl XB_liver_RNAseq_Merged.vcf.gz.tab 11111111 3_4_1_2_3_4_5_6_7_8 XB_liver_RNAseq_Merged_males_and_females.poly XB_liver_RNAseq_Merged_males_and_females.poly_by_windows
 ```
 
+st46
+```
+./Boot_from_tab_diverge_poly_2018_allowmissingdata_transcripts.pl XB_st46_RNAseq_Merged.vcf.gz.tab 11111111 3_4_2_5_7_8 XB_st46_RNAseq_Merged_females.poly XB_st46_RNAseq_Merged_females.poly_by_windows
+
+./Boot_from_tab_diverge_poly_2018_allowmissingdata_transcripts.pl XB_st46_RNAseq_Merged.vcf.gz.tab 11111111 3_4_1_3_4_6 XB_st46_RNAseq_Merged_males.poly XB_st46_RNAseq_Merged_males.poly_by_windows
+
+./Boot_from_tab_diverge_poly_2018_allowmissingdata_transcripts.pl XB_st46_RNAseq_Merged.vcf.gz.tab 11111111 3_4_1_2_3_4_5_6_7_8 XB_st46_RNAseq_Merged_females_male_and_females.poly XB_st46_RNAseq_Merged_male_and_females.poly_by_windows
+```
+
+st48
+```
+./Boot_from_tab_diverge_poly_2018_allowmissingdata_transcripts.pl XB_st48_RNAseq_Merged.vcf.gz.tab 1111111111111 3_4_2_3_4_6_7_10_11_12 XB_st48_RNAseq_Merged_females.poly XB_st48_RNAseq_Merged_females.poly_by_windows
+
+./Boot_from_tab_diverge_poly_2018_allowmissingdata_transcripts.pl XB_st48_RNAseq_Merged.vcf.gz.tab 1111111111111 3_4_1_5_8_9_13 XB_st48_RNAseq_Merged_males.poly XB_st48_RNAseq_Merged_males.poly_by_windows
+
+./Boot_from_tab_diverge_poly_2018_allowmissingdata_transcripts.pl XB_st48_RNAseq_Merged.vcf.gz.tab 1111111111111 3_4_1_2_3_4_5_6_7_8_9_10_11_12_13 XB_st48_RNAseq_Merged_females_male_and_females.poly XB_st48_RNAseq_Merged_male_and_females.poly_by_windows
+```
+
 # Angsd
 
 I decided to use angsd to look at polymorphism of individual male and female XB from different places.
