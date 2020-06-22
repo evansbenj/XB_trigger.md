@@ -76,15 +76,12 @@ make bai index for bam files
 samtools index BJE3896_mom_liver_sorted.bam
 ```
 call genotypees do light filter and outout all calls, including homoz ref
-```
+
 Use samtools and bcftools to call genotypes and filter
-
+```
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/build_transcriptome/borealis_adult_liver_transcriptome_trinityout.fasta -t DP,AD BJE3897_mom_liver_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o BJE3897_mom_liver_sorted.vcf.gz
-
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/build_transcriptome/borealis_adult_liver_transcriptome_trinityout.fasta -t DP,AD BJE3896_dad_liver_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o BJE3896_dad_liver_sorted.vcf.gz
-
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/build_transcriptome/borealis_adult_liver_transcriptome_trinityout.fasta -t DP,AD BJE3929_boy_liver_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o BJE3929_boy_liver_sorted.vcf.gz
-
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/build_transcriptome/borealis_adult_liver_transcriptome_trinityout.fasta -t DP,AD BJE4009_girl_liver_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o BJE4009_girl_liver_sorted.vcf.gz
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/build_transcriptome/borealis_adult_liver_transcriptome_trinityout.fasta -t DP,AD BJE4017_boy_liver_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o BJE4017_boy_liver_sorted.vcf.gz
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_adultFamily_RNAseq/borealis_liver_transcriptome/build_transcriptome/borealis_adult_liver_transcriptome_trinityout.fasta -t DP,AD BJE4039_boy_liver_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o BJE4039_boy_liver_sorted.vcf.gz
@@ -95,65 +92,25 @@ samtools mpileup -d8000 -ugf /home/evanslab/borealis_adultFamily_RNAseq/borealis
 also for tad RNAseq:
 ```
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO12_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO12_sorted.bam.vcf.gz
-
-
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO19_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO19_sorted.bam.vcf.gz
-
-
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO24_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO24_sorted.bam.vcf.gz
-
-
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO29_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO29_sorted.bam.vcf.gz
-
-
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO33_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO33_sorted.bam.vcf.gz
-
-
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO8_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO8_sorted.bam.vcf.gz
-
-
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO15_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO15_sorted.bam.vcf.gz
-
-
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO20_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO20_sorted.bam.vcf.gz
-
-
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO26_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO26_sorted.bam.vcf.gz
-
-
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO30_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO30_sorted.bam.vcf.gz
-
-
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO34_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO34_sorted.bam.vcf.gz
-
-
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO16_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO16_sorted.bam.vcf.gz
-
-
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO21_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO21_sorted.bam.vcf.gz
-
-
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO27_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO27_sorted.bam.vcf.gz
-
-
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO31_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO31_sorted.bam.vcf.gz
-
-
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO35_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO35_sorted.bam.vcf.gz
-
-
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO17_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO17_sorted.bam.vcf.gz
-
-
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO23_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO23_sorted.bam.vcf.gz
-
-
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO28_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO28_sorted.bam.vcf.gz
-
-
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO32_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO32_sorted.bam.vcf.gz
-
-
 samtools mpileup -d8000 -ugf /home/evanslab/borealis_tadpole_transcriptome/data/transcriptome/borealis_tad_goand_transcriptome.fasta -t DP,AD XBO36_sorted.bam | bcftools call --gvcf 5 -V indels --format-fields GQ -m -O z | bcftools filter -e 'QUAL < 20 | DP < 4 | MQ < 20' -O z -o XBO36_sorted.bam.vcf.gz
 
 ```
@@ -219,18 +176,15 @@ in this directory: `/home/evanslab/borealis_adultFamily_RNAseq/trimmed`:
 liver:
 ```
 ./Boot_from_tab_diverge_poly_2018_allowmissingdata_transcripts_.pl XB_liver_RNAseq_Merged.vcf.gz.tab 11111111 3_4_2_4_7_8 XB_liver_RNAseq_Merged_females_.poly_by_windows
-
 ./Boot_from_tab_diverge_poly_2018_allowmissingdata_transcripts_.pl XB_liver_RNAseq_Merged.vcf.gz.tab 11111111 3_4_1_3_5_6 XB_liver_RNAseq_Merged_males_.poly_by_windows
-
 ./Boot_from_tab_diverge_poly_2018_allowmissingdata_transcripts_.pl XB_liver_RNAseq_Merged.vcf.gz.tab 11111111 3_4_1_2_3_4_5_6_7_8 XB_liver_RNAseq_Merged_male_and_females_.poly_by_windows
 ```
 and this one `/home/evanslab/borealis_tadpole_transcriptome/data/trimmed/2_trimmed_data`
+
 st46:
 ```
 ./Boot_from_tab_diverge_poly_2018_allowmissingdata_transcripts.pl XB_st46_RNAseq_Merged.vcf.gz.tab 11111111 3_4_2_5_7_8 XB_st46_RNAseq_Merged_females.poly XB_st46_RNAseq_Merged_females.poly_by_windows
-
 ./Boot_from_tab_diverge_poly_2018_allowmissingdata_transcripts.pl XB_st46_RNAseq_Merged.vcf.gz.tab 11111111 3_4_1_3_4_6 XB_st46_RNAseq_Merged_males.poly XB_st46_RNAseq_Merged_males.poly_by_windows
-
 ./Boot_from_tab_diverge_poly_2018_allowmissingdata_transcripts.pl XB_st46_RNAseq_Merged.vcf.gz.tab 11111111 3_4_1_2_3_4_5_6_7_8 XB_st46_RNAseq_Merged_females_male_and_females.poly XB_st46_RNAseq_Merged_male_and_females.poly_by_windows
 ```
 
