@@ -200,7 +200,7 @@ st48:
 
 # male-specific and female-specific polymorphism in RNAseq data
 
-Patterns of polymorphism are consistent with degeneration of the Z-chr due to it being a Y-chr ancestrally.  However, I suspect that the level of polymorphism is even lower than these estimates. So I am also calculating sex-specific polymorphism in SL and non-SL transcripts.  The idea is that if a transcript has mis-mapping, this should cause heterozygous sites in both sexes, so we should get rid of them. I modified my previous script to accomplish this and used the commands below.
+Patterns of polymorphism are consistent with degeneration of the Z-chr due to it being a Y-chr ancestrally.  However, I suspect that the level of polymorphism is even lower than these estimates. So I am also calculating sex-specific polymorphism in SL and non-SL transcripts.  The idea is that if a transcript has mis-mapping, this should cause heterozygous sites in both sexes, so we should get rid of them. I modified my previous script to accomplish this and used the commands below (in the two directories for adult liver and tad data specified above).
 
 ```
 ./Boot_from_tab_diverge_poly_2018_allowmissingdata_transcripts_male_only_variation.pl XB_st46_RNAseq_Merged.vcf.gz.tab 01001011 3_4_1_2_3_4_5_6_7_8 St46_male_only_variation_with_females_homoz.poly
@@ -211,6 +211,9 @@ Patterns of polymorphism are consistent with degeneration of the Z-chr due to it
 
 ./Boot_from_tab_diverge_poly_2018_allowmissingdata_transcripts_male_only_variation.pl XB_st48_RNAseq_Merged.vcf.gz.tab 1000100110001 3_4_1_2_3_4_5_6_7_8_9_10_11_12_13 St48_female_only_variation_with_males_homoz.poly
 
+./Boot_from_tab_diverge_poly_2018_allowmissingdata_transcripts_male_only_variation.pl XB_liver_RNAseq_Merged.vcf.gz.tab 01010011 3_4_1_2_3_4_5_6_7_8 Adultliver_male_only_variation_with_females_homoz.poly
+
+./Boot_from_tab_diverge_poly_2018_allowmissingdata_transcripts_male_only_variation.pl XB_liver_RNAseq_Merged.vcf.gz.tab 10101100 3_4_1_2_3_4_5_6_7_8 Adultliver_female_only_variation_with_males_homoz.poly
 ```
 
 
