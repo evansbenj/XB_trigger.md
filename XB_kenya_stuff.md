@@ -72,12 +72,9 @@ snpgdsSummary("test5.gds")
 
 
 # LD prinnung
-#snpset <- snpgdsLDpruning(genofile, ld.threshold=0.2, method = c("composite"), missing.rate=0, verbose = TRUE)
-#snpset.id <- unlist(snpset)
-#pca <- snpgdsPCA(genofile, snp.id=snpset.id, num.thread=2)
-pca <- snpgdsPCA(genofile, num.thread=2)
-pc.percent <- pca$varprop*100
-head(round(pc.percent, 2))
+snpset <- snpgdsLDpruning(genofile, ld.threshold=0.2, missing.rate=0.35, verbose = TRUE)
+snpset.id <- unlist(snpset)
+pca <- snpgdsPCA(genofile, snp.id=snpset.id, num.thread=2)
 
 # or without LD prunning
 #pca <- snpgdsPCA(genofile, num.thread=2)
